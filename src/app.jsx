@@ -1,7 +1,8 @@
 import './app.css';
+import CardEditor from './components/card_editor/card_editor';
 
 function App() {
-  return <h1>hello :)</h1>;
+  return <CardEditor />;
 }
 
 export default App;
