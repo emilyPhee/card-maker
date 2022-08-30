@@ -1,8 +1,9 @@
 import './app.css';
-import CardEditor from './components/card_editor/card_editor';
 
-function App() {
-  return <CardEditor />;
+import Login from './components/login/login';
+
+function App({ authService }) {
+  return <Login authService={authService} />;
 }
 
 export default App;
