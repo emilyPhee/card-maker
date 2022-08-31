@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './login.module.css';
@@ -16,9 +17,11 @@ const Login = ({ authService }) => {
         <h1>Login</h1>
         <ul>
           <li>
-            <button className={styles.googleLogin} onClick={onLogin}>
-              Google
-            </button>
+            <Link to="/editor">
+              <button className={styles.googleLogin} onClick={onLogin}>
+                Google
+              </button>
+            </Link>
           </li>
           <li>
             <button className={styles.githubLogin} onClick={onLogin}>
