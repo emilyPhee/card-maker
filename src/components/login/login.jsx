@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Header from '../header/header';
@@ -10,27 +11,25 @@ const Login = ({ authService }) => {
   const onLogin = event => {
     authService //
       .login(event.currentTarget.textContent)
-      .then(result => {
-        const credential = result.credential;
-        const token = credential.accessToken;
-        const user = result.user;
+      .then(data => {
+        const user = data.user;
 
         // when user login, navigate to card editor page
         if (user) {
-          navigate('/editor', { replace: true });
+          navigate('/editor', { replace: true, state: { id: user.uid } });
         }
       })
       .catch(error => {
         // Handle error here
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-
-        // The firebase.auth.AuthCredential type that was used.
-        const credential = error.credential;
       });
   };
 
+  // navigate to card editor page if user already login
+  useEffect(() => {
+    authService.onAuthChange(user => {
+      user && navigate('/editor', { replace: true, state: { id: user.uid } });
+    });
+  });
   return (
     <section className={styles.loginContainer}>
       <Header />

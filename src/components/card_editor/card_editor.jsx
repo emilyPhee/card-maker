@@ -1,15 +1,25 @@
 import React from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './card_editor.module.css';
 
 const CardEditor = ({ authService }) => {
+  const location = useLocation();
+  console.log('USER ID', location.state.id);
   const navigate = useNavigate();
   const onLogout = () => {
     authService.logout().then(navigate('/', { replace: true }));
   };
+
+  useEffect(() => {
+    authService.onAuthChange(user => {
+      if (!user) {
+        navigate('/', { replace: true });
+      }
+    });
+  });
   return (
     <>
       <Header onLogout={onLogout} />
