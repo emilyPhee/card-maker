@@ -1,0 +1,18 @@
+@value makerWhite from '/src/common/colors.css';
+
+.cardEditorContainer {
+  height: 100%;
+  width: 100%;
+  background-color: makerWhite;
+  display: flex;
+}
+
+.editorForm {
+  flex-basis: 50%;
+  background-color: rgb(242, 242, 242);
+}
+
+.cardView {
+  flex-basis: 50%;
+  background-color: rgb(155, 155, 155);
+}

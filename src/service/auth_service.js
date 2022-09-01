@@ -7,6 +7,10 @@ class AuthService {
 
     return firebaseApp.auth().signInWithPopup(authProvider);
   }
+
+  logout() {
+    return firebaseApp.auth().signOut();
+  }
 }
 
 export default AuthService;

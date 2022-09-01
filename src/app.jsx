@@ -7,12 +7,13 @@ import CardEditor from './components/card_editor/card_editor';
 function App({ authService }) {
   return (
     <div className={styles.app}>
-      <>
-        <Routes>
-          <Route path="/" element={<Login authService={authService} />} />
-          <Route path="/editor" element={<CardEditor />} />
-        </Routes>
-      </>
+      <Routes>
+        <Route path="/" element={<Login authService={authService} />} />
+        <Route
+          path="/editor"
+          element={<CardEditor authService={authService} />}
+        />
+      </Routes>
     </div>
   );
 }

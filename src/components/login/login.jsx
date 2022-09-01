@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './login.module.css';
@@ -16,6 +15,7 @@ const Login = ({ authService }) => {
         const token = credential.accessToken;
         const user = result.user;
 
+        // when user login, navigate to card editor page
         if (user) {
           navigate('/editor', { replace: true });
         }
@@ -38,12 +38,9 @@ const Login = ({ authService }) => {
         <h1>Login</h1>
         <ul>
           <li>
-            {/* <Link to="/editor"> */}
-
             <button className={styles.googleLogin} onClick={onLogin}>
               Google
             </button>
-            {/* </Link> */}
           </li>
           <li>
             <button className={styles.githubLogin} onClick={onLogin}>
