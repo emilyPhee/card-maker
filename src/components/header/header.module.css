@@ -1,11 +1,11 @@
-@value makerGreen, makerWhite, makerBlack from '/src/common/colors.css';
+@value makerBlue, makerWhite, makerBlack from '/src/common/colors.css';
 
 img {
   width: 2.5rem;
 }
 
 .headerContainer {
-  background-color: makerGreen;
+  background-color: makerBlue;
   width: 100%;
   text-align: center;
   color: makerWhite;

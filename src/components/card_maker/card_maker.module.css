@@ -1,0 +1,13 @@
+@value makerBlue from '/src/common/colors.css';
+
+.maker {
+  flex-basis: 50%;
+  background-color: rgb(239, 239, 239);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+  color: makerBlue;
+}

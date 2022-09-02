@@ -1,6 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import CardMaker from '../card_maker/card_maker';
+import CardPreview from '../card_preview/card_preview';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './card_editor.module.css';
@@ -21,31 +23,14 @@ const CardEditor = ({ authService }) => {
     });
   });
   return (
-    <>
+    <div className={styles.maker}>
       <Header onLogout={onLogout} />
-      <div className={styles.cardEditorContainer}>
-        <div className={styles.editorForm}>
-          <h2>Card Maker</h2>
-          <input type="text" name="name" placeholder="Name" />
-          <input type="text" name="company" placeholder="Company" />
-          <input type="text" name="title" placeholder="Title" />
-          <input type="text" name="email" placeholder="Email" />
-          {/* <label>
-            What do we eat?
-            <select value={value} onChange={handleChange}>
-              <option value="fruit">Fruit</option>
-              <option value="vegetable">Vegetable</option>
-              <option value="meat">Meat</option>
-            </select>
-          </label> */}
-        </div>
-
-        <div className={styles.cardView}>
-          <h2>Card Preview</h2>
-        </div>
+      <div className={styles.container}>
+        <CardMaker />
+        <CardPreview />
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

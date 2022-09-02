@@ -1,6 +1,4 @@
-@value makerGreen from '/src/common/colors.css';
-@value makerLightGrey from '/src/common/colors.css';
-@value makerWhite from '/src/common/colors.css';
+@value makerBlue, makerLightGrey, makerWhite from '/src/common/colors.css';
 
 ul {
   list-style: none;
@@ -23,7 +21,7 @@ ul {
 
 .googleLogin,
 .githubLogin {
-  border: 3px solid makerGreen;
+  border: 3px solid makerBlue;
   border-radius: 1rem;
   background: none;
   width: 90%;
