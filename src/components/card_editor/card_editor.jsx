@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import CardMaker from '../card_maker/card_maker';
 import CardPreview from '../card_preview/card_preview';
@@ -8,6 +8,7 @@ import Header from '../header/header';
 import styles from './card_editor.module.css';
 
 const CardEditor = ({ authService }) => {
+  const [cards, setCards] = useState([]);
   const location = useLocation();
   console.log('USER ID', location.state.id);
   const navigate = useNavigate();
@@ -26,8 +27,8 @@ const CardEditor = ({ authService }) => {
     <div className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <CardMaker />
-        <CardPreview />
+        <CardMaker cards={cards} />
+        <CardPreview cards={cards} />
       </div>
       <Footer />
     </div>
