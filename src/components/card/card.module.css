@@ -1,0 +1,43 @@
+@value makerWhite, makerBlack, makerColorful from '/src/common/colors.css';
+
+.card {
+  background-color: makerWhite;
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  align-items: center;
+  padding: 2rem 4rem;
+  width: 40rem;
+  border-radius: 2rem;
+}
+
+.imageContainer {
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.imageContainer img {
+  width: 8rem;
+  height: auto;
+}
+
+.infoBox {
+  width: 20rem;
+}
+
+.name {
+  font-size: 1.4rem;
+}
+
+.company,
+.title,
+.email,
+.message {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}

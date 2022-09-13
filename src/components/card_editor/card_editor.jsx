@@ -8,7 +8,31 @@ import Header from '../header/header';
 import styles from './card_editor.module.css';
 
 const CardEditor = ({ authService }) => {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([
+    {
+      id: '1',
+      name: 'Emily',
+      company: 'Hallmark',
+      title: 'UI Developer',
+      email: 'emilypark7@gmail.com',
+      message: 'Code your dream',
+      theme: 'white',
+      fileName: 'default',
+      fileURL: '/images/default_logo.png',
+    },
+    {
+      id: '2',
+      name: 'Anthony',
+      company: 'FieldWire',
+      title: 'Software Engineer',
+      email: 'kunp@gmail.com',
+      message: 'I love coding',
+      theme: 'dark',
+      fileName: 'default',
+      fileURL: '/images/default_logo.png',
+    },
+  ]);
+
   const location = useLocation();
   console.log('USER ID', location.state.id);
   const navigate = useNavigate();
